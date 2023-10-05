@@ -35,5 +35,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Logic\QDTSCZ_ADT_2023241.Logic.csproj">
+      <Project>{1d78333e-3638-427d-91d4-2c067f6f26e4}</Project>
+      <Name>QDTSCZ_ADT_2023241.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Models\QDTSCZ_ADT_2023241.Models.csproj">
+      <Project>{bb9335b0-e6ae-4fcf-a038-d6d22b51a976}</Project>
+      <Name>QDTSCZ_ADT_2023241.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Repository\QDTSCZ_ADT_2023241.Repository.csproj">
+      <Project>{1341d43f-8ef4-4d2a-bfca-3e371295f10c}</Project>
+      <Name>QDTSCZ_ADT_2023241.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
