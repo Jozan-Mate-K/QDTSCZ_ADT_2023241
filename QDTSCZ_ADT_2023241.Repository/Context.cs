@@ -60,6 +60,7 @@ namespace QDTSCZ_ADT_2023241.Repository
                       .WithMany(m => m.RequiredInstruments)
                       .HasForeignKey(m => m.BandId)
                       .OnDelete(DeleteBehavior.SetNull);
+
                 entity.HasData(i1, i2, i3, i4, i5, i6, i7);
 
             });
