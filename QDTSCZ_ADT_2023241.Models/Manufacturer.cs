@@ -20,5 +20,10 @@ namespace QDTSCZ_ADT_2023241.Models
         [NotMapped]
         [JsonIgnore]
         public ICollection<Instrument> Instruments { get; set; }
+
+        public Manufacturer()
+        {
+            Instruments = new HashSet<Instrument>();
+        }
     }
 }

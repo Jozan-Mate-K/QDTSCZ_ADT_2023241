@@ -11,8 +11,10 @@ namespace QDTSCZ_ADT_2023241.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         public string Description { get; set; }
         public int Year { get; set; }
         [Required]
@@ -28,5 +30,11 @@ namespace QDTSCZ_ADT_2023241.Models
         public virtual Band Band { get; set; }
         [ForeignKey(nameof(Band))]
         public int BandId { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{Manufacturer} {Name} has been rented out by {Band.Name} for their next tour";
+        }
     }
 }

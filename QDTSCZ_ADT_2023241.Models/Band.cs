@@ -15,6 +15,7 @@ namespace QDTSCZ_ADT_2023241.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public int Balance { get; set; }
         [NotMapped]
@@ -22,5 +23,15 @@ namespace QDTSCZ_ADT_2023241.Models
         public virtual ICollection<Instrument> RequiredInstruments { get; set; }
         [Range(1, 5)]
         public int Priority {  get; set; }
+
+        public Band()
+        {
+            RequiredInstruments = new HashSet<Instrument>();
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} has a balance of {Balance}";
+        }
     }
 }
