@@ -15,5 +15,17 @@ namespace QDTSCZ_ADT_2023241.Repository
         {
             return GetAll().SingleOrDefault(band => band.Id == Id) ;
         }
+        public void UpdateBandBalance(int Id, int balance)
+        {
+            if (GetSingle(Id) == null)
+            {
+                throw new ArgumentException("There is no band with that id");
+            }
+
+            GetSingle(Id).Balance = balance;
+            context.SaveChanges();
+
+
+        }
     }
 }
