@@ -8,6 +8,7 @@ namespace QDTSCZ_ADT_2023241.Repository
 {
     public abstract class Repository<T> where T : class
     {
+
         protected Context context;
         protected Repository(Context context)
         {
@@ -27,6 +28,6 @@ namespace QDTSCZ_ADT_2023241.Repository
         {
             return context.Set<T>();
         }
-        public abstract T GetSingle(int ID);
+        public abstract T GetSingle(int Id);
     }
 }
