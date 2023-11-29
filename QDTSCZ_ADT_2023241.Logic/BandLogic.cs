@@ -49,5 +49,12 @@ namespace QDTSCZ_ADT_2023241.Logic
             bandRepository.Remove(bandRepository.GetSingle(Id));
         }
 
+        //Non-crud
+
+        public IEnumerable<Manufacturer> GetManufacturers(int Id)
+        {
+            return bandRepository.GetSingle(Id).RequiredInstruments.Select(instr => instr.Manufacturer);
+        }
+
     }
 }

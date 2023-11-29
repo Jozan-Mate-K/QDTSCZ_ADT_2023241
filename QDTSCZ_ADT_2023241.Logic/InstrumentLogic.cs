@@ -31,13 +31,13 @@ namespace QDTSCZ_ADT_2023241.Logic
             }
             return instrumentRepository.GetSingle(Id);
         }
-        public void UpdateBand(Band band)
+        public void UpdateBand(Instrument instrument,Band band)
         {
-            if (band == null)
+            if (band == null || instrument == null)
             {
-                throw new ArgumentNullException("No instrument added");
+                throw new ArgumentNullException("No instrument changed");
             }
-            instrumentRepository.UpdateBand(band.Id, band);
+            instrumentRepository.UpdateBand(instrument.Id, band);
         }
 
         public void Delete(int Id)
