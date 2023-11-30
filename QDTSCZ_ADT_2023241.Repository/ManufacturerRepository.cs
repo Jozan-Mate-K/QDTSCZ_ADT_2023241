@@ -17,13 +17,8 @@ namespace QDTSCZ_ADT_2023241.Repository
         }
         public void UpdateName(int Id, string name)
         {
-            if (GetSingle(Id).Name == null)
-            {
-                throw new ArgumentException("There is no manufacturer with that id");
-            }
             GetSingle(Id).Name = name;
             context.SaveChanges();
-
         }
 
     }

@@ -20,10 +20,6 @@ namespace QDTSCZ_ADT_2023241.Repository
 
         public void UpdateBand (int Id, Band band) 
         {
-            if(GetSingle(Id) == null)
-            {
-                throw new ArgumentException("There is no instrument with that id");
-            }
 
             GetSingle(Id).Band = band;
             context.SaveChanges();
