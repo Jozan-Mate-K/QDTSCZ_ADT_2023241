@@ -6,8 +6,8 @@ namespace QDTSCZ_ADT_2023241.Logic
     public class ManufacturerLogic: IManufacturerLogic
     {
         protected ManufacturerRepository manufacturerRepository;
-        ManufacturerRepository @object;
-        public ManufacturerLogic(ManufacturerRepository @object)
+        IManufacturerRepository @object;
+        public ManufacturerLogic(IManufacturerRepository @object)
         {
             this.@object = @object;
         }

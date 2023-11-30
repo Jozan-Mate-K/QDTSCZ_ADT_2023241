@@ -6,8 +6,8 @@ namespace QDTSCZ_ADT_2023241.Logic
     public class BandLogic: IBandLogic
     {
         protected BandRepository bandRepository;
-        BandRepository @object;
-        public BandLogic(BandRepository @object)
+        IBandRepository @object;
+        public BandLogic(IBandRepository @object)
         {
             this.@object = @object;
         }
