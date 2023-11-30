@@ -1,59 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F8E53230-85BD-428A-B9F7-57689EE001FF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>QDTSCZ_ADT_2023241.Endpoint</RootNamespace>
-    <AssemblyName>QDTSCZ_ADT_2023241.Endpoint</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Logic\QDTSCZ_ADT_2023241.Logic.csproj" />
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Models\QDTSCZ_ADT_2023241.Models.csproj" />
+    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Repository\QDTSCZ_ADT_2023241.Repository.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Logic\QDTSCZ_ADT_2023241.Logic.csproj">
-      <Project>{1d78333e-3638-427d-91d4-2c067f6f26e4}</Project>
-      <Name>QDTSCZ_ADT_2023241.Logic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Models\QDTSCZ_ADT_2023241.Models.csproj">
-      <Project>{bb9335b0-e6ae-4fcf-a038-d6d22b51a976}</Project>
-      <Name>QDTSCZ_ADT_2023241.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QDTSCZ_ADT_2023241.Repository\QDTSCZ_ADT_2023241.Repository.csproj">
-      <Project>{1341d43f-8ef4-4d2a-bfca-3e371295f10c}</Project>
-      <Name>QDTSCZ_ADT_2023241.Repository</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Castle.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.5.1.1\lib\net462\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

@@ -14,6 +14,8 @@ namespace QDTSCZ_ADT_2023241.Repository
         {
             this.context = context;
         }
+        public IEnumerable<T> Entities { get; set; }
+
         public void Add(T element)
         {
             context.Set<T>().Add(element);
