@@ -4,9 +4,9 @@ using QDTSCZ_ADT_2023241.Logic;
 using QDTSCZ_ADT_2023241.Models;
 using QDTSCZ_ADT_2023241.Repository;
 
-namespace QDTSCZ_ADT_2023241.Test1
+namespace QDTSCZ_ADT_2023241.Test
 {
-    public class Tests
+    public class InstrumentTests
     {
 
         private Mock<IInstrumentRepository> repository;
@@ -51,9 +51,10 @@ namespace QDTSCZ_ADT_2023241.Test1
         }
 
         [Test]
-        public void Test1()
+        public void CreateTest()
         {
-            Assert.Pass();
+            Instrument inst = new Instrument() { Name = "" };
+            Assert.Throws<ArgumentNullException>(()=> logic.AddNew(inst));
         }
     }
 }
