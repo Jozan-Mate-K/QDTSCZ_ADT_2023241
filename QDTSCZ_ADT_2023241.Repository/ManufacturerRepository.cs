@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QDTSCZ_ADT_2023241.Repository
 {
-    public class ManufacturerRepository: Repository<Manufacturer>
+    public class ManufacturerRepository: Repository<Manufacturer>, IManufacturerRepository
     {
         public ManufacturerRepository(Context context) : base(context) { }
 

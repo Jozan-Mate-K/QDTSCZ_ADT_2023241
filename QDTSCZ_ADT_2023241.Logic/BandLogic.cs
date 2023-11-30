@@ -3,7 +3,7 @@ using QDTSCZ_ADT_2023241.Repository;
 
 namespace QDTSCZ_ADT_2023241.Logic
 {
-    public class BandLogic
+    public class BandLogic: IBandLogic
     {
         protected BandRepository bandRepository;
         BandRepository @object;

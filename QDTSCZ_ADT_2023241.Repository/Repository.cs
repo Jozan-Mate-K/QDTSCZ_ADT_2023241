@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QDTSCZ_ADT_2023241.Repository
 {
-    public abstract class Repository<T> where T : class
+    public abstract class Repository<T>: IRepository<T> where T : class
     {
 
         protected Context context;
@@ -26,7 +26,7 @@ namespace QDTSCZ_ADT_2023241.Repository
             context.Set<T>().Remove(element);
             context.SaveChanges();
         }
-        public IQueryable<T> GetAll()
+        public virtual IQueryable<T> GetAll()
         {
             return context.Set<T>();
         }

@@ -3,11 +3,11 @@ using QDTSCZ_ADT_2023241.Repository;
 
 namespace QDTSCZ_ADT_2023241.Logic
 {
-    public class InstrumentLogic
+    public class InstrumentLogic: IInstrumentLogic
     {
         protected InstrumentRepository instrumentRepository;
-        InstrumentRepository @object;
-        public InstrumentLogic(InstrumentRepository @object)
+        IInstrumentRepository @object;
+        public InstrumentLogic(IInstrumentRepository @object)
         {
             this.@object = @object;
         }

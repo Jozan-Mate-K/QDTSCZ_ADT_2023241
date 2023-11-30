@@ -1,4 +1,5 @@
 using Moq;
+using NUnit.Framework;
 using QDTSCZ_ADT_2023241.Logic;
 using QDTSCZ_ADT_2023241.Models;
 using QDTSCZ_ADT_2023241.Repository;
@@ -8,13 +9,13 @@ namespace QDTSCZ_ADT_2023241.Test1
     public class Tests
     {
 
-        private Mock<InstrumentRepository> repository;
-        private InstrumentLogic logic;
+        private Mock<IInstrumentRepository> repository;
+        private IInstrumentLogic logic;
 
         [SetUp]
         public void Setup()
         {
-            repository = new Mock<InstrumentRepository>();
+            repository = new Mock<IInstrumentRepository>();
 
             var instruments = new List<Instrument>() { 
                 new Instrument { 

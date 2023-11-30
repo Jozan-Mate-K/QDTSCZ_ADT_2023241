@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QDTSCZ_ADT_2023241.Repository
 {
-    public class BandRepository : Repository<Band>
+    public class BandRepository : Repository<Band>, IBandRepository
     {
         public BandRepository(Context context) : base(context) { }
 

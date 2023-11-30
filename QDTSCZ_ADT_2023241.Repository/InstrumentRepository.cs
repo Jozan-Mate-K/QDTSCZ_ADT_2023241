@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace QDTSCZ_ADT_2023241.Repository
 {
-    public class InstrumentRepository: Repository<Instrument>
+    public class InstrumentRepository: Repository<Instrument>, IInstrumentRepository
     {
 
         public InstrumentRepository(Context context) : base(context) { }
