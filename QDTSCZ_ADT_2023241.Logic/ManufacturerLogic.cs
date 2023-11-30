@@ -13,7 +13,9 @@ namespace QDTSCZ_ADT_2023241.Logic
         }
         public void AddNew(Manufacturer manufacturer)
         {
-            if (manufacturer == null) 
+            if (manufacturer == null ||
+                manufacturer.Name == ""||
+                manufacturer.Name == null) 
             {
                 throw new ArgumentNullException("No manufacturer added"); 
             }
@@ -33,9 +35,9 @@ namespace QDTSCZ_ADT_2023241.Logic
         }
         public void UpdateName(Manufacturer manufacturer)
         {
-            if (manufacturer == null)
+            if (manufacturer == null || manufacturerRepository.GetSingle(manufacturer.Id) == null)
             {
-                throw new ArgumentNullException("No manufacturer added");
+                throw new ArgumentNullException("No manufacturer changed");
             }
             manufacturerRepository.UpdateName(manufacturer.Id, manufacturer.Name);
         }

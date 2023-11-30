@@ -13,7 +13,9 @@ namespace QDTSCZ_ADT_2023241.Logic
         }
         public void AddNew(Band band)
         {
-            if (band == null) 
+            if (band == null ||
+                band.Name == "" ||
+                band.Name == null) 
             {
                 throw new ArgumentNullException("No band added"); 
             }

@@ -13,7 +13,9 @@ namespace QDTSCZ_ADT_2023241.Logic
         }
         public void AddNew(Instrument instrument)
         {
-            if (instrument == null) 
+            if (instrument == null ||
+                instrument.Name == "" ||
+                instrument.Name == null) 
             {
                 throw new ArgumentNullException("No instrument added"); 
             }
