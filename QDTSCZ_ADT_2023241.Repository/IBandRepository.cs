@@ -9,6 +9,6 @@ namespace QDTSCZ_ADT_2023241.Repository
 {
     public interface IBandRepository: IRepository<Band>
     {
-        public void UpdateBandBalance(int Id, int balance);
+        public void UpdateBandBalance(int Id, int? balance);
     }
 }

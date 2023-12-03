@@ -18,10 +18,10 @@ namespace QDTSCZ_ADT_2023241.Repository
             return GetAll().SingleOrDefault(instrument => instrument.Id == Id);
         }
 
-        public void UpdateBand (int Id, Band band) 
+        public void UpdateBand (int Id, int bandId) 
         {
 
-            GetSingle(Id).Band = band;
+            GetSingle(Id).BandId = bandId;
             context.SaveChanges();
             
 

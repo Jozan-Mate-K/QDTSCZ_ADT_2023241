@@ -6,10 +6,9 @@ namespace QDTSCZ_ADT_2023241.Logic
     public class BandLogic: IBandLogic
     {
         protected BandRepository bandRepository;
-        IBandRepository @object;
         public BandLogic(IBandRepository @object)
         {
-            this.@object = @object;
+            bandRepository = (BandRepository?)@object;
         }
         public void AddNew(Band band)
         {
@@ -35,7 +34,7 @@ namespace QDTSCZ_ADT_2023241.Logic
         }
         public void UpdateBandBalance(Band band)
         {
-            if (band == null)
+            if (band == null || band.Balance == null)
             {
                 throw new ArgumentNullException("No band added");
             }

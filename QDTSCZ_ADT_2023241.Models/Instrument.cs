@@ -8,18 +8,21 @@ namespace QDTSCZ_ADT_2023241.Models
     [Table("Instruments")]
     public class Instrument
     {
+        public string? Color {  get; set; }
+        public string? Description { get; set; }
+        public int? Year { get; set; }
+
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         [Required]
         public string Name { get; set; }
-
-        public string Description { get; set; }
-        public int Year { get; set; }
         [Required]
         public instrumentTypeEnum Type{ get; set; }
-        public string Color {  get; set; }
+
+
+
         [NotMapped]
         [JsonIgnore]
         public virtual Manufacturer Manufacturer { get; set; }
@@ -32,9 +35,5 @@ namespace QDTSCZ_ADT_2023241.Models
         public int BandId { get; set; }
 
 
-        public override string ToString()
-        {
-            return $"{Manufacturer} {Name} has been rented out by {Band.Name} for their next tour";
-        }
     }
 }

@@ -19,7 +19,7 @@ namespace QDTSCZ_ADT_2023241.Models
         public string Name { get; set; }
         [NotMapped]
         [JsonIgnore]
-        public ICollection<Instrument> Instruments { get; set; }
+        public virtual ICollection<Instrument> Instruments { get; set; }
 
         public Manufacturer()
         {

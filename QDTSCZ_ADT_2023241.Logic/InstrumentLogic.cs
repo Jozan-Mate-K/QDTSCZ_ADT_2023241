@@ -6,10 +6,9 @@ namespace QDTSCZ_ADT_2023241.Logic
     public class InstrumentLogic: IInstrumentLogic
     {
         protected InstrumentRepository instrumentRepository;
-        IInstrumentRepository @object;
         public InstrumentLogic(IInstrumentRepository @object)
         {
-            this.@object = @object;
+            instrumentRepository = (InstrumentRepository?)@object;
         }
         public void AddNew(Instrument instrument)
         {
@@ -33,13 +32,13 @@ namespace QDTSCZ_ADT_2023241.Logic
             }
             return instrumentRepository.GetSingle(Id);
         }
-        public void UpdateBand(Instrument instrument,Band band)
+        public void UpdateBand(Instrument instrument)
         {
-            if (band == null || instrument == null)
+            if (instrument == null)
             {
                 throw new ArgumentNullException("No instrument changed");
             }
-            instrumentRepository.UpdateBand(instrument.Id, band);
+            instrumentRepository.UpdateBand(instrument.Id, instrument.BandId);
         }
 
         public void Delete(int Id)

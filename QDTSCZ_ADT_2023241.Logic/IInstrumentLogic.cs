@@ -13,7 +13,7 @@ namespace QDTSCZ_ADT_2023241.Logic
         Instrument Get(int Id);
         IEnumerable<Instrument> GetAll();
         void AddNew(Instrument instrument);
-        void UpdateBand(Instrument instrument, Band band);
+        void UpdateBand(Instrument instrument);
         void Delete(int Id);
     }
 }

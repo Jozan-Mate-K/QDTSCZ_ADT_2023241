@@ -15,7 +15,7 @@ namespace QDTSCZ_ADT_2023241.Repository
         {
             return GetAll().SingleOrDefault(band => band.Id == Id) ;
         }
-        public void UpdateBandBalance(int Id, int balance)
+        public void UpdateBandBalance(int Id, int? balance)
         {
             GetSingle(Id).Balance = balance;
             context.SaveChanges();
