@@ -5,10 +5,10 @@ namespace QDTSCZ_ADT_2023241.Logic
 {
     public class ManufacturerLogic: IManufacturerLogic
     {
-        protected ManufacturerRepository manufacturerRepository;
+        protected IManufacturerRepository manufacturerRepository;
         public ManufacturerLogic(IManufacturerRepository @object)
         {
-            manufacturerRepository = (ManufacturerRepository?)@object;
+            manufacturerRepository = @object;
         }
         public void AddNew(Manufacturer manufacturer)
         {

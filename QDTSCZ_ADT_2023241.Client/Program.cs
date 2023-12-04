@@ -80,6 +80,12 @@ namespace QDTSCZ_ADT_2023241.Client
             }
             Console.WriteLine();
 
+            Manufacturer m = restService.Get<Manufacturer>(1, "NonCrud/manufacturer");
+            Console.WriteLine(m.ToString());
+
+            Band b = restService.Get<Band>(1, "NonCrud/band");
+            Console.WriteLine(b.ToString());
+
             Instrument instr = restService.Get<Instrument>(1, "Instrument");
             Console.WriteLine($"{instr.Name}, {instr.Band.Name}, {instr.Manufacturer.Name} ez jött meg");
 

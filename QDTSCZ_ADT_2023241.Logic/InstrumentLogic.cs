@@ -5,10 +5,18 @@ namespace QDTSCZ_ADT_2023241.Logic
 {
     public class InstrumentLogic: IInstrumentLogic
     {
-        protected InstrumentRepository instrumentRepository;
-        public InstrumentLogic(IInstrumentRepository @object)
+        protected IInstrumentRepository instrumentRepository;
+        protected IManufacturerRepository manufacturerRepository;
+        protected IBandRepository bandRepository;
+
+        public InstrumentLogic(
+            IInstrumentRepository @instrumentR,
+            IManufacturerRepository @manufacturerR,
+            IBandRepository @bandR)
         {
-            instrumentRepository = (InstrumentRepository?)@object;
+            instrumentRepository = instrumentR;
+            manufacturerRepository = manufacturerR;
+            bandRepository = bandR; //Thats what im gonna go on
         }
         public void AddNew(Instrument instrument)
         {
@@ -56,5 +64,14 @@ namespace QDTSCZ_ADT_2023241.Logic
             instrumentRepository.Remove(instrumentRepository.GetSingle(Id));
         }
 
+
+        public Manufacturer GetManufacturer(int Id)
+        {
+            return manufacturerRepository.GetSingle(instrumentRepository.GetSingle(Id).ManufacturerId);
+        }
+        public Band GetBand(int Id)
+        {
+            return bandRepository.GetSingle(instrumentRepository.GetSingle(Id).BandId);
+        }
     }
 }

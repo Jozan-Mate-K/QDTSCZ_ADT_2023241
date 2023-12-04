@@ -15,5 +15,9 @@ namespace QDTSCZ_ADT_2023241.Logic
         void AddNew(Instrument instrument);
         void Update(Instrument instrument);
         void Delete(int Id);
+
+        public Manufacturer GetManufacturer(int Id);
+        public Band GetBand(int Id);
+
     }
 }

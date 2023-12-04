@@ -21,22 +21,26 @@ namespace QDTSCZ_ADT_2023241.Test
                 new Band()
                 {
                     Id = 1,
-                    Name = "Mockband1"
+                    Name = "Mockband1",
+                    Balance = 10
                 },
                 new Band()
                 {
                     Id = 2,
-                    Name = "Mockband2"
+                    Name = "Mockband2",
+                    Balance = 10
                 },
                 new Band()
                 {
                     Id = 3,
-                    Name = "Mockband3"
+                    Name = "Mockband3",
+                    Balance = 10
                 },
                 new Band()
                 {
                     Id = 4,
-                    Name = "Mockband4"
+                    Name = "Mockband4",
+                    Balance = 10
                 }
             };
             repository.Setup((m) => m.Entities).Returns(bands);

@@ -5,10 +5,10 @@ namespace QDTSCZ_ADT_2023241.Logic
 {
     public class BandLogic: IBandLogic
     {
-        protected BandRepository bandRepository;
+        protected IBandRepository bandRepository;
         public BandLogic(IBandRepository @object)
         {
-            bandRepository = (BandRepository?)@object;
+            bandRepository = @object;
         }
         public void AddNew(Band band)
         {
