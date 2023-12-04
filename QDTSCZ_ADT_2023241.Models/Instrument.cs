@@ -21,19 +21,23 @@ namespace QDTSCZ_ADT_2023241.Models
         [Required]
         public instrumentTypeEnum Type{ get; set; }
 
-
+        
 
         [NotMapped]
         [JsonIgnore]
-        public virtual Manufacturer Manufacturer { get; set; }
+        public virtual Manufacturer? Manufacturer { get; set; }
         [ForeignKey(nameof(Manufacturer))]
         public int ManufacturerId { get; set; }
         [NotMapped]
         [JsonIgnore]
-        public virtual Band Band { get; set; }
+        public virtual Band? Band { get; set; }
         [ForeignKey(nameof(Band))]
         public int BandId { get; set; }
 
+        public override string ToString()
+        {
+            return $"[{Id}]: {Name} ";
+        }
 
     }
 }

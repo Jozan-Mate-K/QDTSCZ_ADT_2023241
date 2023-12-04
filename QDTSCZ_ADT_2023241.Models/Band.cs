@@ -32,5 +32,26 @@ namespace QDTSCZ_ADT_2023241.Models
             RequiredInstruments = new HashSet<Instrument>();
         }
 
+        public override string ToString()
+        {
+            if(Balance == null)
+            {
+                return $"[{Id}]: {Name} has no checking account";
+            }
+            else
+            {
+                if(Priority == null)
+                {
+                    return $"[{Id}]: {Name} has a balance of {Balance}";
+
+                }
+                else
+                {
+                    return $"[{Id}]: {Name} has a balance of {Balance} with a priority of {Priority}";
+
+                }
+            }
+        }
+
     }
 }

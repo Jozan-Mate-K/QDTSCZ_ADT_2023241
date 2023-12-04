@@ -9,6 +9,7 @@ namespace QDTSCZ_ADT_2023241.Repository
 {
     public interface IInstrumentRepository: IRepository<Instrument>
     {
-        public void UpdateBand(int Id, int bandId);    
+        public void UpdateBand(int Id, int bandId);
+        public void UpdateManufacturer(int Id, int manufacturerId);
     }
 }

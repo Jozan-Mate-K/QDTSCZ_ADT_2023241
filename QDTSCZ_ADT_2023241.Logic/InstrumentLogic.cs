@@ -32,15 +32,21 @@ namespace QDTSCZ_ADT_2023241.Logic
             }
             return instrumentRepository.GetSingle(Id);
         }
-        public void UpdateBand(Instrument instrument)
+        public void Update(Instrument instrument)
         {
             if (instrument == null)
             {
                 throw new ArgumentNullException("No instrument changed");
             }
-            instrumentRepository.UpdateBand(instrument.Id, instrument.BandId);
+            if (Get(instrument.Id).Band != instrument.Band)
+            {
+                instrumentRepository.UpdateBand(instrument.Id, instrument.BandId);
+            }
+            if (Get(instrument.Id).Manufacturer != instrument.Manufacturer)
+            {
+                instrumentRepository.UpdateManufacturer(instrument.Id, instrument.BandId);
+            }
         }
-
         public void Delete(int Id)
         {
             if(instrumentRepository.GetSingle(Id) == null)

@@ -26,5 +26,10 @@ namespace QDTSCZ_ADT_2023241.Repository
             
 
         }
+        public void UpdateManufacturer(int Id, int manufacturerId)
+        {
+            GetSingle(Id).ManufacturerId = manufacturerId;
+            context.SaveChanges();
+        }
     }
 }

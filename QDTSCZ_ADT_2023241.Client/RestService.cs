@@ -70,12 +70,8 @@ namespace QDTSCZ_ADT_2023241.Client
 
         public void Post<T>(T item, string endpoint)
         {
-            //TODO: Malformed request
-            Console.WriteLine(item);
             HttpResponseMessage response =
-                client.PostAsJsonAsync(endpoint, (T)item).GetAwaiter().GetResult();
-
-            Console.WriteLine(response);
+                client.PostAsJsonAsync<T>(endpoint, (T)item).GetAwaiter().GetResult();
 
             response.EnsureSuccessStatusCode();
         }

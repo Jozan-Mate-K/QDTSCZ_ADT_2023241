@@ -25,5 +25,10 @@ namespace QDTSCZ_ADT_2023241.Models
         {
             Instruments = new HashSet<Instrument>();
         }
+
+        public override string ToString()
+        {
+            return $"[{Id}]: {Name} ";
+        }
     }
 }
