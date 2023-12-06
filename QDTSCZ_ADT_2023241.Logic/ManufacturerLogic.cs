@@ -6,9 +6,11 @@ namespace QDTSCZ_ADT_2023241.Logic
     public class ManufacturerLogic: IManufacturerLogic
     {
         protected IManufacturerRepository manufacturerRepository;
-        public ManufacturerLogic(IManufacturerRepository @object)
+
+        public ManufacturerLogic(
+            IManufacturerRepository mRepo)
         {
-            manufacturerRepository = @object;
+            manufacturerRepository = mRepo;
         }
         public void AddNew(Manufacturer manufacturer)
         {
@@ -50,5 +52,12 @@ namespace QDTSCZ_ADT_2023241.Logic
             manufacturerRepository.Remove(manufacturerRepository.GetSingle(Id));
         }
 
+        //Non-crud
+
+        public IEnumerable<Instrument> GetInstrumentsByManufacturers(int Id)
+        {
+            return manufacturerRepository.GetSingle(Id).Instruments;
+            
+        }
     }
 }

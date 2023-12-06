@@ -45,7 +45,7 @@ namespace QDTSCZ_ADT_2023241.Test
             };
             repository.Setup((m) => m.Entities).Returns(bands);
             repository.Setup((m) => m.GetAll()).Returns(()=> bands.AsQueryable());
-            repository.Setup((m) => m.GetSingle(It.Is<int>(value => value == 1))).Returns(() => bands[1]);
+            repository.Setup((m) => m.GetSingle(It.Is<int>(value => value == 1))).Returns(() => bands.Find(b=> b.Id == 1));
             logic = new BandLogic(repository.Object);
         }
 
@@ -55,5 +55,28 @@ namespace QDTSCZ_ADT_2023241.Test
             Band band = new Band() { Name = "" };
             Assert.Throws<ArgumentNullException>(()=> logic.AddNew(band));
         }
+
+        [Test]
+        public void GetTest()
+        {
+            Assert.That(logic.GetAll().Count(), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void RussianRouletteTest()
+        {
+            int r = new Random().Next(0, 7);
+
+            if (r == 0)
+            {
+                Assert.Fail();
+            }
+            else
+            {
+                Assert.Pass();
+            }
+        }
+
+
     }
 }

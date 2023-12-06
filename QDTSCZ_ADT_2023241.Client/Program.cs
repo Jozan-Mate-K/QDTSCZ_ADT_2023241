@@ -51,16 +51,19 @@ namespace QDTSCZ_ADT_2023241.Client
             };
 
             //POST testing
+            Console.WriteLine( "POST TESTING" );
 
             restService.Post<Manufacturer>(manufacturer, "Manufacturer");
             restService.Post<Band>(band, "Band");
             restService.Post<Instrument>(instrument, "Instrument");
+            Console.WriteLine();
 
 
+            //GETALL testing
+            Console.WriteLine("GETALL TESTING");
 
-            //GET testing
-
-            ICollection<Instrument> ilist = restService.Get<Instrument>("Instrument"); 
+            ICollection<Instrument> ilist = restService.Get<Instrument>("Instrument");
+            ICollection<Instrument> imanulist = restService.Get<ICollection<Instrument>>(1, "NonCrud/intrumentsByManufacturer");
             ICollection<Band> blist = restService.Get<Band>("Band"); 
             ICollection<Manufacturer> mlist = restService.Get<Manufacturer>("Manufacturer"); 
 
@@ -80,43 +83,95 @@ namespace QDTSCZ_ADT_2023241.Client
             }
             Console.WriteLine();
 
+            Console.WriteLine("NON-CRUD");
+            foreach (var item in imanulist)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
+
+
+
+            //GET TESTING
+            Console.WriteLine("GET TESTING");
+
+
+            Instrument instr = restService.Get<Instrument>(1, "Instrument");
+            Console.WriteLine(instr.ToString());
+
+            Band ban = restService.Get<Band>(1, "Band");
+            Console.WriteLine(band.ToString());
+
+
+            Manufacturer manu = restService.Get<Manufacturer>(1, "Manufacturer");
+            Console.WriteLine(manu.ToString());
+
+            Console.WriteLine();
+            Console.WriteLine("NON-CRUD GET");
+
             Manufacturer m = restService.Get<Manufacturer>(1, "NonCrud/manufacturer");
             Console.WriteLine(m.ToString());
 
             Band b = restService.Get<Band>(1, "NonCrud/band");
             Console.WriteLine(b.ToString());
 
-            Instrument instr = restService.Get<Instrument>(1, "Instrument");
-            Console.WriteLine($"{instr.Name}, {instr.Band.Name}, {instr.Manufacturer.Name} ez jött meg");
-
-
-            Band ban = restService.Get<Band>(1, "Band");
-            Console.WriteLine($"{band.Name} ez jött meg");
-
-
-            Manufacturer manu = restService.Get<Manufacturer>(1, "Manufacturer");
-            Console.WriteLine($"{manu.Name} ez jött meg");
+            Console.WriteLine();
 
             //PUT testing
+            Console.WriteLine("PUT TESTING");
+
 
             ban.Balance = 200;
             restService.Put<Band>(ban, "Band");
             ban = restService.Get<Band>(1, "Band");
-            Console.WriteLine($"{ban.Balance} ez jött meg");
+            Console.WriteLine(ban.ToString());
 
-            manu.Name = "Test";
+            manu.Name = "Test123";
             restService.Put<Manufacturer>(manu, "Manufacturer");
             manu = restService.Get<Manufacturer>(1, "Manufacturer");
-            Console.WriteLine($"{manu.Name} ez jött meg");
+            Console.WriteLine(manu.ToString());
 
             instr.Band = ban;
             //instr.BandId = band.Id;
             restService.Put<Instrument>(instr, "Instrument");
             instr = restService.Get<Instrument>(1, "Instrument");
+            Console.WriteLine($"{instr.Name}, {instr.Band.Name} bal = {instr.Band.Balance}, {instr.Manufacturer.Name} arrived");
 
-            Console.WriteLine($"{instr.Name}, {instr.Band.Name}, {instr.Manufacturer.Name} ez jött meg");
+
+            Console.WriteLine();
 
 
+            //DELETE Testing
+            Console.WriteLine("DELETE TESTING");
+
+            restService.Delete(manu.Id, "Manufacturer");
+            restService.Delete(ban.Id, "Band");
+            restService.Delete(instr.Id, "Instrument");
+
+            ilist = restService.Get<Instrument>("Instrument");
+            blist = restService.Get<Band>("Band");
+            mlist = restService.Get<Manufacturer>("Manufacturer");
+
+            foreach (var item in ilist)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
+            foreach (var item in blist)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
+            foreach (var item in mlist)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
+            foreach (var item in imanulist)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine();
 
 
             Console.Read();

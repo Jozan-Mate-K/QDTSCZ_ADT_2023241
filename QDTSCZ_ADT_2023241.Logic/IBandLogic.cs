@@ -15,7 +15,6 @@ namespace QDTSCZ_ADT_2023241.Logic
         void AddNew(Band band);
         void UpdateBandBalance(Band band);
         void Delete(int Id);
-        public IEnumerable<Manufacturer> GetManufacturers(int Id);
 
     }
 }

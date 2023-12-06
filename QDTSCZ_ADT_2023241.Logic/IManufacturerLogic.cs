@@ -15,5 +15,8 @@ namespace QDTSCZ_ADT_2023241.Logic
         void AddNew(Manufacturer manufacturer);
         void UpdateName(Manufacturer manufacturer);
         void Delete(int Id);
+
+        public IEnumerable<Instrument> GetInstrumentsByManufacturers(int Id);
+
     }
 }

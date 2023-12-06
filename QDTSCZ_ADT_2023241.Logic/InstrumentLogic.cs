@@ -64,6 +64,7 @@ namespace QDTSCZ_ADT_2023241.Logic
             instrumentRepository.Remove(instrumentRepository.GetSingle(Id));
         }
 
+        //Non-crud
 
         public Manufacturer GetManufacturer(int Id)
         {
