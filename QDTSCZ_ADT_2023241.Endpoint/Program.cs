@@ -22,6 +22,7 @@ namespace QDTSCZ_ADT_2023241.Endpoint
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://localhost:5031", "http://0.0.0.0:5030");
                 });
     }
 }

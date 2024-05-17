@@ -52,7 +52,7 @@ namespace QDTSCZ_ADT_2023241.Logic
             }
             if (Get(instrument.Id).Manufacturer != instrument.Manufacturer)
             {
-                instrumentRepository.UpdateManufacturer(instrument.Id, instrument.BandId);
+                instrumentRepository.UpdateManufacturer(instrument.Id, instrument.ManufacturerId);
             }
         }
         public void Delete(int Id)
